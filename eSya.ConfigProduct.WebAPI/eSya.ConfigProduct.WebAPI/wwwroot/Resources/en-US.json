@@ -1,0 +1,22 @@
+{
+  "W0077": "Service Type is already Exist",
+  "W0078": "This Service Type is linked to a Service Group(s). Please unlink it before deactivating",
+  "W0079": "Service Type Description is already Exist",
+  "W0080": "is already on top",
+  "W0081": "is already on bottom",
+  "W0082": "This Service Type is linked to a Service Group(s). Please unlink it before deletion",
+  "W0083": "Service Group is already Exist",
+  "W0084": "This Service Group is linked to a Service Class(es). Please unlink it before deactivating",
+  "W0085": "This Service Group is linked to a Service Class(es). Please unlink it before delwting",
+  "W0086": "Service Class Description is already Exist",
+  "W0087": "This Service Class is linked to another Service Class(es). Please unlink it before deactivating",
+  "W0088": "This Service Class is linked to a Service(s). Please unlink it before deactivating",
+  "W0089": "Specialty is already Exist",
+  "W0090": "Specialty does not Exist",
+  "W0091": "Effective Date already Exist",
+  "S0001": "Saved Sucessfully",
+  "S0002": "Updated Sucessfully",
+  "S0003": "Activated Successfully",
+  "S0004": "De Activated Successfully",
+  "S0005": "Deleted Sucessfully"
+}

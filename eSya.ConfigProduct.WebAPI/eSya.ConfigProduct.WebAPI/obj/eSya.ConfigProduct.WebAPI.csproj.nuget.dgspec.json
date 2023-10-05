@@ -1,0 +1,329 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI.csproj": {}
+  },
+  "projects": {
+    "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL.csproj",
+        "projectName": "eSya.ConfigProduct.DL",
+        "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj": {
+                "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj"
+              },
+              "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF.csproj": {
+                "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Localization.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj",
+        "projectName": "eSya.ConfigProduct.DO",
+        "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF.csproj",
+        "projectName": "eSya.ConfigProduct.IF",
+        "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj": {
+                "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI.csproj",
+        "projectName": "eSya.ConfigProduct.WebAPI",
+        "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.WebAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL.csproj": {
+                "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL\\eSya.ConfigProduct.DL.csproj"
+              },
+              "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj": {
+                "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO\\eSya.ConfigProduct.DO.csproj"
+              },
+              "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF.csproj": {
+                "projectPath": "D:\\Projects\\eSyaProjects2022\\eSya.ConfigProduct.WebAPI\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF\\eSya.ConfigProduct.IF.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
