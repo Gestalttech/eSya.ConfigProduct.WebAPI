@@ -9,8 +9,8 @@ namespace eSya.ConfigProduct.DO
     public class CodeTypeValue
     {
         
-        public const int Clinic = 61;
-        public const int ConsultationType = 63;
-      
+        public const int Clinic = 83;
+        public const int ConsultationType = 84;
+
     }
 }
