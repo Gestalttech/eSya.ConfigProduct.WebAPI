@@ -8,6 +8,7 @@ namespace eSya.ConfigProduct.DL.Entities
         public int BusinessKey { get; set; }
         public int SpecialtyId { get; set; }
         public DateTime EffectiveFrom { get; set; }
+        public DateTime? EffectiveTill { get; set; }
         public int NoOfUnits { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;

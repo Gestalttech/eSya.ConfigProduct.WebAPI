@@ -13,7 +13,7 @@ namespace eSya.ConfigProduct.DO
         public string? SpecialtyDesc { get; set; }
         public DateTime EffectiveFrom { get; set; }
         public int NoOfUnits { get; set; }
-
+        public DateTime? EffectiveTill { get; set; }
         public int NewPatient { get; set; }
         public int RepeatPatient { get; set; }
         public int NoOfMaleBeds { get; set; }

@@ -1113,7 +1113,6 @@ D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\obj\Debug\net6.0\eSya.ConfigProduct.WebAPI.AssemblyInfoInputs.cache
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\obj\Debug\net6.0\eSya.ConfigProduct.WebAPI.AssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\obj\Debug\net6.0\eSya.ConfigProduct.WebAPI.csproj.CoreCompileInputs.cache
-D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\obj\Debug\net6.0\eSya.ConfigProduct.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\obj\Debug\net6.0\eSya.ConfigProduct.WebAPI.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.eSya.ConfigProduct.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.WebAPI\obj\Debug\net6.0\staticwebassets\msbuild.build.eSya.ConfigProduct.WebAPI.props

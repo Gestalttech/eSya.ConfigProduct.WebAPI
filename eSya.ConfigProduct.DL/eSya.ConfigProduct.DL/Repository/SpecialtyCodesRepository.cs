@@ -45,7 +45,13 @@ namespace eSya.ConfigProduct.DL.Repository
                                 SpecialtyDesc = obj.SpecialtyDesc.Trim(),
                                 Gender = obj.Gender,
                                 SpecialtyType = obj.SpecialtyType,
-                                AlliedServices = obj.AlliedServices,
+                                SpecialtyGroup = obj.SpecialtyGroup,
+                                MedicalIcon=obj.MedicalIcon,
+                                FocusArea=obj.FocusArea,
+                                AgeRangeFrom=obj.AgeRangeFrom,
+                                RangePeriodFrom=obj.RangePeriodFrom,
+                                AgeRangeTo=obj.AgeRangeTo,
+                                RangePeriodTo=obj.RangePeriodTo,
                                 ActiveStatus = obj.ActiveStatus,
                                 FormId = obj.FormId,
                                 CreatedBy = obj.UserID,
@@ -95,7 +101,13 @@ namespace eSya.ConfigProduct.DL.Repository
                         sp_ms.SpecialtyDesc = obj.SpecialtyDesc.Trim();
                         sp_ms.Gender = obj.Gender;
                         sp_ms.SpecialtyType = obj.SpecialtyType;
-                        sp_ms.AlliedServices = obj.AlliedServices;
+                        sp_ms.SpecialtyGroup = obj.SpecialtyGroup;
+                        sp_ms.MedicalIcon = obj.MedicalIcon;
+                        sp_ms.FocusArea = obj.FocusArea;
+                        sp_ms.AgeRangeFrom = obj.AgeRangeFrom;
+                        sp_ms.RangePeriodFrom = obj.RangePeriodFrom;
+                        sp_ms.AgeRangeTo = obj.AgeRangeTo;
+                        sp_ms.RangePeriodTo=obj.RangePeriodTo;
                         sp_ms.ActiveStatus = obj.ActiveStatus;
                         sp_ms.ModifiedBy = obj.UserID;
                         sp_ms.ModifiedOn = System.DateTime.Now;
@@ -171,7 +183,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             SpecialtyDesc = x.SpecialtyDesc,
                             Gender = x.Gender,
                             SpecialtyType = x.SpecialtyType,
-                            AlliedServices = x.AlliedServices,
+                            SpecialtyGroup = x.SpecialtyGroup,
                             ActiveStatus = x.ActiveStatus
 
                         }).OrderBy(x => x.SpecialtyDesc).ToListAsync();
@@ -200,7 +212,13 @@ namespace eSya.ConfigProduct.DL.Repository
                             SpecialtyDesc = x.SpecialtyDesc,
                             Gender = x.Gender,
                             SpecialtyType = x.SpecialtyType,
-                            AlliedServices = x.AlliedServices,
+                            SpecialtyGroup = x.SpecialtyGroup,
+                            MedicalIcon=x.MedicalIcon,
+                            FocusArea=x.FocusArea,
+                            AgeRangeFrom=x.AgeRangeFrom,
+                            RangePeriodFrom=x.RangePeriodFrom,
+                            AgeRangeTo=x.AgeRangeTo,
+                            RangePeriodTo=x.RangePeriodTo,
                             ActiveStatus = x.ActiveStatus
 
                         }).FirstOrDefaultAsync();

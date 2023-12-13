@@ -55,6 +55,86 @@ namespace eSya.ConfigProduct.DL.Repository
             }
         }
 
+        //public async Task<List<DO_SpecialtyUnit>> GetUnitsValidityBySpecialty(int businessKey, int specialtyId)
+        //{
+        //    using (var db = new eSyaEnterprise())
+        //    {
+        //        try
+        //        {
+        //            var sp_u = db.GtEsspuns
+        //                .Where(w => w.BusinessKey == businessKey && w.SpecialtyId == specialtyId && w.ActiveStatus)
+        //                .AsNoTracking()
+        //                .Select(x => new DO_SpecialtyUnit
+        //                {
+        //                    SpecialtyID = x.SpecialtyId,
+        //                    EffectiveFrom = x.EffectiveFrom,
+        //                    NoOfUnits = x.NoOfUnits,
+        //                    ActiveStatus=x.ActiveStatus,
+        //                    EffectiveTill=x.EffectiveTill
+        //                })
+        //                .OrderByDescending(x => x.EffectiveFrom).ToListAsync();
+
+        //            return await sp_u;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            throw ex;
+        //        }
+        //    }
+        //}
+
+        //public async Task<DO_ReturnParameter> InsertSpecialtyUnitsValidity(DO_SpecialtyUnit obj)
+        //{
+        //    try
+        //    {
+        //        using (var db = new eSyaEnterprise())
+        //        {
+        //            using (var dbContext = db.Database.BeginTransaction())
+        //            {
+        //                try
+        //                {
+        //                    var dateExists = db.GtEsspuns.Where(x => x.EffectiveFrom == obj.EffectiveFrom).FirstOrDefault();
+        //                    if (dateExists != null)
+        //                    {
+        //                        return new DO_ReturnParameter() { Status = false, StatusCode = "W0091", Message = string.Format(_localizer[name: "W0091"]) };
+        //                    }
+        //                    var sUnitValidity = new GtEsspun
+        //                    {
+        //                        BusinessKey = obj.BusinessKey,
+        //                        SpecialtyId = obj.SpecialtyID,
+        //                        EffectiveFrom = obj.EffectiveFrom,
+        //                        NoOfUnits = obj.NoOfUnits,
+        //                        ActiveStatus = obj.ActiveStatus,
+        //                        FormId = obj.FormId,
+        //                        CreatedBy = obj.UserID,
+        //                        CreatedOn = System.DateTime.Now,
+        //                        CreatedTerminal = obj.TerminalID,
+
+        //                    };
+        //                    db.GtEsspuns.Add(sUnitValidity);
+
+        //                    await db.SaveChangesAsync();
+        //                    dbContext.Commit();
+        //                    return new DO_ReturnParameter() { Status = true, StatusCode = "S0001", Message = string.Format(_localizer[name: "S0001"]) };
+        //                }
+        //                catch (DbUpdateException ex)
+        //                {
+        //                    dbContext.Rollback();
+        //                    throw new Exception(CommonMethod.GetValidationMessageFromException(ex));
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    dbContext.Rollback();
+        //                    throw ex;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
         public async Task<List<DO_SpecialtyUnit>> GetUnitsValidityBySpecialty(int businessKey, int specialtyId)
         {
             using (var db = new eSyaEnterprise())
@@ -62,13 +142,15 @@ namespace eSya.ConfigProduct.DL.Repository
                 try
                 {
                     var sp_u = db.GtEsspuns
-                        .Where(w => w.BusinessKey == businessKey && w.SpecialtyId == specialtyId && w.ActiveStatus)
+                        .Where(w => w.BusinessKey == businessKey && w.SpecialtyId == specialtyId )
                         .AsNoTracking()
                         .Select(x => new DO_SpecialtyUnit
                         {
                             SpecialtyID = x.SpecialtyId,
                             EffectiveFrom = x.EffectiveFrom,
-                            NoOfUnits = x.NoOfUnits
+                            NoOfUnits = x.NoOfUnits,
+                            ActiveStatus = x.ActiveStatus,
+                            EffectiveTill = x.EffectiveTill
                         })
                         .OrderByDescending(x => x.EffectiveFrom).ToListAsync();
 
@@ -80,60 +162,92 @@ namespace eSya.ConfigProduct.DL.Repository
                 }
             }
         }
-
         public async Task<DO_ReturnParameter> InsertSpecialtyUnitsValidity(DO_SpecialtyUnit obj)
         {
-            try
+            using (eSyaEnterprise db = new eSyaEnterprise())
             {
-                using (var db = new eSyaEnterprise())
+                using (var dbContext = db.Database.BeginTransaction())
                 {
-                    using (var dbContext = db.Database.BeginTransaction())
+                    try
                     {
-                        try
+
+                        var bcExist = db.GtEsspuns.Where(w => w.SpecialtyId == obj.SpecialtyID && w.BusinessKey == obj.BusinessKey && w.EffectiveTill == null).FirstOrDefault();
+                        if (bcExist != null)
                         {
-                            var dateExists = db.GtEsspuns.Where(x => x.EffectiveFrom == obj.EffectiveFrom).FirstOrDefault();
-                            if (dateExists != null)
+                            if (obj.EffectiveFrom != bcExist.EffectiveFrom)
                             {
-                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0091", Message = string.Format(_localizer[name: "W0091"]) };
+                                if (obj.EffectiveFrom < bcExist.EffectiveFrom)
+                                {
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0183", Message = string.Format(_localizer[name: "W0183"]) };
+                                }
+                                bcExist.EffectiveTill = obj.EffectiveFrom.AddDays(-1);
+                                bcExist.ModifiedBy = obj.UserID;
+                                bcExist.ModifiedOn = DateTime.Now;
+                                bcExist.ModifiedTerminal = obj.TerminalID;
+                                bcExist.ActiveStatus = false;
+
+                                var bc = new GtEsspun
+                                {
+                                    BusinessKey = obj.BusinessKey,
+                                    SpecialtyId = obj.SpecialtyID,
+                                    NoOfUnits = obj.NoOfUnits,
+                                    EffectiveFrom = obj.EffectiveFrom,
+                                    ActiveStatus = obj.ActiveStatus,
+                                    FormId = obj.FormId,
+                                    CreatedBy = obj.UserID,
+                                    CreatedOn = DateTime.Now,
+                                    CreatedTerminal = obj.TerminalID
+                                };
+                                db.GtEsspuns.Add(bc);
+
+
                             }
-                            var sUnitValidity = new GtEsspun
+                            else
                             {
-                                BusinessKey = obj.BusinessKey,
-                                SpecialtyId = obj.SpecialtyID,
-                                EffectiveFrom = obj.EffectiveFrom,
-                                NoOfUnits = obj.NoOfUnits,
-                                ActiveStatus = obj.ActiveStatus,
-                                FormId = obj.FormId,
-                                CreatedBy = obj.UserID,
-                                CreatedOn = System.DateTime.Now,
-                                CreatedTerminal = obj.TerminalID,
+                                bcExist.NoOfUnits = obj.NoOfUnits;
+                                bcExist.ActiveStatus = obj.ActiveStatus;
+                                bcExist.ModifiedBy = obj.UserID;
+                                bcExist.ModifiedOn = DateTime.Now;
+                                bcExist.ModifiedTerminal = obj.TerminalID;
+                            }
 
-                            };
-                            db.GtEsspuns.Add(sUnitValidity);
+                        }
+                        else
+                        {
+                            if (obj.NoOfUnits!=0)
+                            {
+                                var bcal = new GtEsspun
+                                {
+                                    BusinessKey = obj.BusinessKey,
+                                    SpecialtyId = obj.SpecialtyID,
+                                    NoOfUnits = obj.NoOfUnits,
+                                    EffectiveFrom = obj.EffectiveFrom,
+                                    ActiveStatus = obj.ActiveStatus,
+                                    FormId = obj.FormId,
+                                    CreatedBy = obj.UserID,
+                                    CreatedOn = DateTime.Now,
+                                    CreatedTerminal = obj.TerminalID
+                                };
+                                db.GtEsspuns.Add(bcal);
+                            }
 
-                            await db.SaveChangesAsync();
-                            dbContext.Commit();
-                            return new DO_ReturnParameter() { Status = true, StatusCode = "S0001", Message = string.Format(_localizer[name: "S0001"]) };
                         }
-                        catch (DbUpdateException ex)
-                        {
-                            dbContext.Rollback();
-                            throw new Exception(CommonMethod.GetValidationMessageFromException(ex));
-                        }
-                        catch (Exception ex)
-                        {
-                            dbContext.Rollback();
-                            throw ex;
-                        }
+                        await db.SaveChangesAsync();
+                        dbContext.Commit();
+                        return new DO_ReturnParameter() { Status = true, StatusCode = "S0001", Message = string.Format(_localizer[name: "S0001"]) };
+
+                    }
+                    catch (DbUpdateException ex)
+                    {
+                        dbContext.Rollback();
+                        throw new Exception(CommonMethod.GetValidationMessageFromException(ex));
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
+        #endregion
 
+        #region Specialty IP Info
         public async Task<DO_SpecialtyUnit> GetSpecialtyIPInfo(int businessKey, int specialtyId)
         {
             using (var db = new eSyaEnterprise())

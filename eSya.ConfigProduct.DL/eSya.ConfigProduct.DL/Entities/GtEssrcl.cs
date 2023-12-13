@@ -16,7 +16,6 @@ namespace eSya.ConfigProduct.DL.Entities
         public string ServiceClassDesc { get; set; } = null!;
         public int ParentId { get; set; }
         public int PrintSequence { get; set; }
-        public bool IsBaseRateApplicable { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }

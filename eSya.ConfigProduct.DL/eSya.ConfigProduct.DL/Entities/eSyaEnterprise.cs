@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace eSya.ConfigProduct.DL.Entities
 {
+    
     public partial class eSyaEnterprise : DbContext
     {
         public static string _connString = "";
@@ -88,20 +89,6 @@ namespace eSya.ConfigProduct.DL.Entities
 
                 entity.Property(e => e.CurrencyCode).HasMaxLength(4);
 
-                entity.Property(e => e.EActiveUsers).HasColumnName("eActiveUsers");
-
-                entity.Property(e => e.EBusinessKey).HasColumnName("eBusinessKey");
-
-                entity.Property(e => e.ENoOfBeds).HasColumnName("eNoOfBeds");
-
-                entity.Property(e => e.ESyaLicenseType)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .HasColumnName("eSyaLicenseType")
-                    .IsFixedLength();
-
-                entity.Property(e => e.EUserLicenses).HasColumnName("eUserLicenses");
-
                 entity.Property(e => e.FormId)
                     .HasMaxLength(10)
                     .IsUnicode(false)
@@ -111,13 +98,11 @@ namespace eSya.ConfigProduct.DL.Entities
 
                 entity.Property(e => e.LocationDescription).HasMaxLength(150);
 
-                entity.Property(e => e.LocnDateFormat)
-                    .HasMaxLength(12)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.ShortDesc).HasMaxLength(15);
 
                 entity.Property(e => e.TocurrConversion).HasColumnName("TOCurrConversion");
 
@@ -224,14 +209,11 @@ namespace eSya.ConfigProduct.DL.Entities
                     .ValueGeneratedNever()
                     .HasColumnName("SpecialtyID");
 
-                entity.Property(e => e.AlliedServices)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FocusArea).HasMaxLength(2000);
 
                 entity.Property(e => e.FormId)
                     .HasMaxLength(10)
@@ -249,7 +231,22 @@ namespace eSya.ConfigProduct.DL.Entities
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
 
+                entity.Property(e => e.RangePeriodFrom)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength();
+
+                entity.Property(e => e.RangePeriodTo)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength();
+
                 entity.Property(e => e.SpecialtyDesc).HasMaxLength(50);
+
+                entity.Property(e => e.SpecialtyGroup)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength();
 
                 entity.Property(e => e.SpecialtyType)
                     .HasMaxLength(1)
@@ -325,6 +322,8 @@ namespace eSya.ConfigProduct.DL.Entities
                 entity.Property(e => e.CreatedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.EffectiveTill).HasColumnType("datetime");
 
                 entity.Property(e => e.FormId)
                     .HasMaxLength(10)

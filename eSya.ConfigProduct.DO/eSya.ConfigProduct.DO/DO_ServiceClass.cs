@@ -11,7 +11,7 @@ namespace eSya.ConfigProduct.DO
         public int ServiceClassId { get; set; }
         public int ServiceGroupId { get; set; }
         public string ServiceClassDesc { get; set; }
-        public bool IsBaseRateApplicable { get; set; }
+        //public bool IsBaseRateApplicable { get; set; }
         public int ParentId { get; set; }
         public int PrintSequence { get; set; }
         public bool ActiveStatus { get; set; }

@@ -495,7 +495,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                      ServiceGroupId = x.ServiceGroupId,
                                      ServiceClassId = x.ServiceClassId,
                                      ServiceClassDesc = x.ServiceClassDesc,
-                                     IsBaseRateApplicable = x.IsBaseRateApplicable,
+                                     //IsBaseRateApplicable = x.IsBaseRateApplicable,
                                      ParentId = x.ParentId,
                                      PrintSequence = x.PrintSequence,
                                      ActiveStatus = x.ActiveStatus
@@ -544,7 +544,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                  {
                                      ServiceClassId = x.ServiceClassId,
                                      ServiceClassDesc = x.ServiceClassDesc,
-                                     IsBaseRateApplicable = x.IsBaseRateApplicable,
+                                     //IsBaseRateApplicable = x.IsBaseRateApplicable,
                                      ActiveStatus = x.ActiveStatus,
                                      l_ClassParameter = x.GtEspascs.Select(p => new DO_eSyaParameter
                                      {
@@ -597,7 +597,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                     ServiceGroupId = obj.ServiceGroupId,
                                     ServiceClassId = newServiceClassId,
                                     ServiceClassDesc = obj.ServiceClassDesc,
-                                    IsBaseRateApplicable = obj.IsBaseRateApplicable,
+                                    //IsBaseRateApplicable = obj.IsBaseRateApplicable,
                                     ParentId = parentId,
                                     PrintSequence = newPrintSequence,
                                     ActiveStatus = obj.ActiveStatus,
@@ -653,7 +653,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 }
                             }
                             updatedServiceClass.ServiceClassDesc = obj.ServiceClassDesc;
-                            updatedServiceClass.IsBaseRateApplicable = obj.IsBaseRateApplicable;
+                            //updatedServiceClass.IsBaseRateApplicable = obj.IsBaseRateApplicable;
                             updatedServiceClass.ActiveStatus = obj.ActiveStatus;
                             updatedServiceClass.ModifiedBy = obj.UserID;
                             updatedServiceClass.ModifiedOn = obj.CreatedOn;
