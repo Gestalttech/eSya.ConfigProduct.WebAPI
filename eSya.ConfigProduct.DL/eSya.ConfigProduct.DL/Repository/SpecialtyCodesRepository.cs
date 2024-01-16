@@ -57,7 +57,6 @@ namespace eSya.ConfigProduct.DL.Repository
                                 CreatedBy = obj.UserID,
                                 CreatedOn = System.DateTime.Now,
                                 CreatedTerminal = obj.TerminalID,
-
                             };
                             db.GtEsspcds.Add(sMaster);
 
