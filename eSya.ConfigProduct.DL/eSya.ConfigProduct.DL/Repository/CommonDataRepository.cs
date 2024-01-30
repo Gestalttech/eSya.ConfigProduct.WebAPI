@@ -72,7 +72,7 @@ namespace eSya.ConfigProduct.DL.Repository
                         .Select(r => new DO_BusinessLocation
                         {
                             BusinessKey = r.BusinessKey,
-                            LocationDescription = r.BusinessName,
+                            LocationDescription = r.BusinessName + "-" + r.LocationDescription
                         }).ToListAsync();
 
                     return await bk;

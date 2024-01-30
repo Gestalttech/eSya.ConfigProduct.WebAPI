@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace eSya.ConfigProduct.DL.Entities
 {
-    
     public partial class eSyaEnterprise : DbContext
     {
         public static string _connString = "";
@@ -18,6 +17,7 @@ namespace eSya.ConfigProduct.DL.Entities
         {
         }
 
+        public virtual DbSet<GtEbeagr> GtEbeagrs { get; set; } = null!;
         public virtual DbSet<GtEcapcd> GtEcapcds { get; set; } = null!;
         public virtual DbSet<GtEcbsln> GtEcbslns { get; set; } = null!;
         public virtual DbSet<GtEsopcl> GtEsopcls { get; set; } = null!;
@@ -43,6 +43,44 @@ namespace eSya.ConfigProduct.DL.Entities
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<GtEbeagr>(entity =>
+            {
+                entity.HasKey(e => e.AgeRangeId);
+
+                entity.ToTable("GT_EBEAGR");
+
+                entity.Property(e => e.AgeRangeId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("AgeRangeID");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.FormId)
+                    .HasMaxLength(10)
+                    .IsUnicode(false)
+                    .HasColumnName("FormID");
+
+                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
+
+                entity.Property(e => e.RangeDesc)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.RangeFromPeriod)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength();
+
+                entity.Property(e => e.RangeToPeriod)
+                    .HasMaxLength(1)
+                    .IsUnicode(false)
+                    .IsFixedLength();
+            });
+
             modelBuilder.Entity<GtEcapcd>(entity =>
             {
                 entity.HasKey(e => e.ApplicationCode)

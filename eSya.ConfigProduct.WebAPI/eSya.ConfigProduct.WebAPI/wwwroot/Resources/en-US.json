@@ -15,7 +15,7 @@
   "W0090": "Specialty does not Exist",
   "W0091": "Effective Date already Exist",
   "W0183": "New effective date can't be less than the current effective date",
-
+  "W0184": "Age Group is not Exist",
   "S0001": "Saved Sucessfully",
   "S0002": "Updated Sucessfully",
   "S0003": "Activated Successfully",

@@ -50,6 +50,7 @@ builder.Services.AddScoped<IServiceManagementRepository, ServiceManagementReposi
 builder.Services.AddScoped<ISpecialtyCodesRepository, SpecialtyCodesRepository>();
 builder.Services.AddScoped<ISpecialtyRepository, SpecialtyRepository>();
 builder.Services.AddScoped<ISpecialtyUnitsRepository, SpecialtyUnitsRepository>();
+builder.Services.AddScoped<IAgeRangeRepository, AgeRangeRepository>();
 builder.Services.AddSingleton<IStringLocalizerFactory, JsonStringLocalizerFactory>();
 
 builder.Services.AddControllers();
