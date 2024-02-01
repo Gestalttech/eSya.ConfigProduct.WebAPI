@@ -1,0 +1,12 @@
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\bin\Release\net6.0\eSya.ConfigProduct.DO.deps.json
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\bin\Release\net6.0\eSya.ConfigProduct.DO.dll
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\bin\Release\net6.0\eSya.ConfigProduct.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\eSya.ConfigProduct.DO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\eSya.ConfigProduct.DO.AssemblyInfoInputs.cache
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\eSya.ConfigProduct.DO.AssemblyInfo.cs
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\eSya.ConfigProduct.DO.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\eSya.ConfigProduct.DO.sourcelink.json
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\eSya.ConfigProduct.DO.dll
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\refint\eSya.ConfigProduct.DO.dll
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\eSya.ConfigProduct.DO.pdb
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DO\eSya.ConfigProduct.DO\obj\Release\net6.0\ref\eSya.ConfigProduct.DO.dll
