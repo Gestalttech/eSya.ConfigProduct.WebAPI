@@ -87,10 +87,10 @@ D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSy
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.AssemblyInfoInputs.cache
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.AssemblyInfo.cs
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.csproj.CoreCompileInputs.cache
+D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.sourcelink.json
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.csproj.CopyComplete
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.dll
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\refint\eSya.ConfigProduct.DL.dll
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.pdb
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.genruntimeconfig.cache
 D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\ref\eSya.ConfigProduct.DL.dll
-D:\Projects\eSyaProjects2022\eSya.ConfigProduct.WebAPI\eSya.ConfigProduct.DL\eSya.ConfigProduct.DL\obj\Debug\net6.0\eSya.ConfigProduct.DL.sourcelink.json

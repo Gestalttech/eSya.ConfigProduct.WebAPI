@@ -12,10 +12,6 @@ namespace eSya.ConfigProduct.DL.Entities
         public string SpecialtyGroup { get; set; } = null!;
         public string? MedicalIcon { get; set; }
         public string? FocusArea { get; set; }
-        public int AgeRangeFrom { get; set; }
-        public string RangePeriodFrom { get; set; } = null!;
-        public int AgeRangeTo { get; set; }
-        public string RangePeriodTo { get; set; } = null!;
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }

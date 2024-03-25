@@ -164,7 +164,7 @@ namespace eSya.ConfigProduct.DL.Repository
                         GtEsspbl sp_ms = db.GtEsspbls.Where(w => w.SpecialtyId == obj.SpecialtyID && w.BusinessKey == obj.BusinessKey).FirstOrDefault();
                         if (sp_ms == null)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0090", Message = string.Format(_localizer[name: "W0090"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0105", Message = string.Format(_localizer[name: "W0105"]) };
                         }
 
                         sp_ms.ActiveStatus = obj.ActiveStatus;

@@ -78,7 +78,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             var RecordExist = db.GtEssrties.Where(w => w.ServiceTypeDesc == obj.ServiceTypeDesc).Count();
                             if (RecordExist > 0)
                             {
-                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0077", Message = string.Format(_localizer[name: "W0077"]) };
+                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0091", Message = string.Format(_localizer[name: "W0091"]) };
                             }
                             else
                             {
@@ -107,7 +107,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == obj.ServiceTypeId && w.ActiveStatus).Count();
                                 if (LinkExist > 0)
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0078", Message = string.Format(_localizer[name: "W0078"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0092", Message = string.Format(_localizer[name: "W0092"]) };
                                 }
                             }
                             var updatedServiceType = db.GtEssrties.Where(w => w.ServiceTypeId == obj.ServiceTypeId).FirstOrDefault();
@@ -116,7 +116,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 var RecordExist = db.GtEssrties.Where(w => w.ServiceTypeDesc == obj.ServiceTypeDesc).Count();
                                 if (RecordExist > 0)
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0079", Message = string.Format(_localizer[name: "W0079"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0093", Message = string.Format(_localizer[name: "W0093"]) };
 
                                 }
 
@@ -168,7 +168,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             }
                             else
                             {
-                                return new DO_ReturnParameter() { Status = false,StatusCode= "W0080", Message = stCurrent.ServiceTypeDesc + string.Format(_localizer[name: "W0080"]) };
+                                return new DO_ReturnParameter() { Status = false,StatusCode= "W0094", Message = stCurrent.ServiceTypeDesc + string.Format(_localizer[name: "W0094"]) };
                             }
                         }
                         else if (isMoveDown)
@@ -183,7 +183,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             }
                             else
                             {
-                                return new DO_ReturnParameter() { Status = false,StatusCode= "W0081", Message = stCurrent.ServiceTypeDesc + string.Format(_localizer[name: "W0081"]) };
+                                return new DO_ReturnParameter() { Status = false,StatusCode= "W0094", Message = stCurrent.ServiceTypeDesc + string.Format(_localizer[name: "W0094"]) };
                             }
                         }
 
@@ -214,7 +214,7 @@ namespace eSya.ConfigProduct.DL.Repository
                         var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == serviceTypeId).Count();
                         if (LinkExist > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0082", Message = string.Format(_localizer[name: "W0082"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0096", Message = string.Format(_localizer[name: "W0096"]) };
                         }
 
                         var ServiceType = db.GtEssrties.Where(w => w.ServiceTypeId == serviceTypeId).FirstOrDefault();
@@ -324,7 +324,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             var RecordExist = db.GtEssrgrs.Where(w => w.ServiceGroupDesc == obj.ServiceGroupDesc).Count();
                             if (RecordExist > 0)
                             {
-                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0083", Message = string.Format(_localizer[name: "W0083"]) };
+                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0097", Message = string.Format(_localizer[name: "W0097"]) };
                             }
                             else
                             {
@@ -357,7 +357,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == obj.ServiceGroupId && w.ActiveStatus).Count();
                                 if (LinkExist > 0)
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0084", Message = string.Format(_localizer[name: "W0084"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0098", Message = string.Format(_localizer[name: "W0098"]) };
                                 }
                             }
                             var updatedServiceGroup = db.GtEssrgrs.Where(w => w.ServiceGroupId == obj.ServiceGroupId).FirstOrDefault();
@@ -366,7 +366,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 var RecordExist = db.GtEssrgrs.Where(w => w.ServiceGroupDesc == obj.ServiceGroupDesc).Count();
                                 if (RecordExist > 0)
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0083", Message = string.Format(_localizer[name: "W0083"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0097", Message = string.Format(_localizer[name: "W0097"]) };
                                 }
                             }
                             updatedServiceGroup.ServiceGroupDesc = obj.ServiceGroupDesc;
@@ -413,7 +413,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             }
                             else
                             {
-                                return new DO_ReturnParameter() { Status = false,StatusCode= "W0080", Message = sgCurrent.ServiceGroupDesc + string.Format(_localizer[name: "W0080"]) };
+                                return new DO_ReturnParameter() { Status = false,StatusCode= "W0094", Message = sgCurrent.ServiceGroupDesc + string.Format(_localizer[name: "W0094"]) };
                             }
                         }
                         else if (isMoveDown)
@@ -428,7 +428,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             }
                             else
                             {
-                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0081", Message = sgCurrent.ServiceGroupDesc + string.Format(_localizer[name: "W0081"]) };
+                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0094", Message = sgCurrent.ServiceGroupDesc + string.Format(_localizer[name: "W0094"]) };
                             }
                         }
 
@@ -458,7 +458,7 @@ namespace eSya.ConfigProduct.DL.Repository
                         var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == serviceGroupId).Count();
                         if (LinkExist > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0085", Message = string.Format(_localizer[name: "W0085"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0099", Message = string.Format(_localizer[name: "W0099"]) };
                         }
 
                         var ServiceGroup = db.GtEssrgrs.Where(w => w.ServiceGroupId == serviceGroupId).FirstOrDefault();
@@ -578,7 +578,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             var RecordExist = db.GtEssrcls.Where(w => w.ServiceClassDesc == obj.ServiceClassDesc).Count();
                             if (RecordExist > 0)
                             {
-                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0086", Message = string.Format(_localizer[name: "W0086"]) };
+                                return new DO_ReturnParameter() { Status = false, StatusCode = "W0100", Message = string.Format(_localizer[name: "W0100"]) };
                             }
                             else
                             {
@@ -635,12 +635,12 @@ namespace eSya.ConfigProduct.DL.Repository
                                 var cLinkExist = db.GtEssrcls.Where(w => w.ParentId == obj.ServiceClassId && w.ParentId != w.ServiceClassId && w.ActiveStatus).Count();
                                 if (cLinkExist > 0)
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0087", Message = string.Format(_localizer[name: "W0087"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0101", Message = string.Format(_localizer[name: "W0101"]) };
                                 }
                                 var sLinkExist = db.GtEssrms.Where(w => w.ServiceClassId == obj.ServiceClassId && w.ActiveStatus).Count();
                                 if (sLinkExist > 0)
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0088", Message = string.Format(_localizer[name: "W0088"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0102", Message = string.Format(_localizer[name: "W0102"]) };
                                 }
                             }
                             var updatedServiceClass = db.GtEssrcls.Where(w => w.ServiceClassId == obj.ServiceClassId).FirstOrDefault();
@@ -649,7 +649,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 var RecordExist = db.GtEssrcls.Where(w => w.ServiceClassDesc == obj.ServiceClassDesc).Count();
                                 if (RecordExist > 0)
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0086", Message = string.Format(_localizer[name: "W0086"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0100", Message = string.Format(_localizer[name: "W0100"]) };
                                 }
                             }
                             updatedServiceClass.ServiceClassDesc = obj.ServiceClassDesc;
@@ -733,7 +733,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 }
                                 else
                                 {
-                                    return new DO_ReturnParameter() { Status = false,StatusCode= "W0080", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0080"]) };
+                                    return new DO_ReturnParameter() { Status = false,StatusCode= "W0094", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0094"]) };
                                 }
                             }
                             else if (isMoveDown)
@@ -748,7 +748,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 }
                                 else
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0081", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0081"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0094", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0094"]) };
                                 }
                             }
                         }
@@ -766,7 +766,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 }
                                 else
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0080", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0080"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0094", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0094"]) };
                                 }
                             }
                             else if (isMoveDown)
@@ -781,7 +781,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                 }
                                 else
                                 {
-                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0081", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0081"]) };
+                                    return new DO_ReturnParameter() { Status = false, StatusCode = "W0094", Message = scCurrent.ServiceClassDesc + string.Format(_localizer[name: "W0094"]) };
                                 }
                             }
                         }
@@ -813,12 +813,12 @@ namespace eSya.ConfigProduct.DL.Repository
                         var cLinkExist = db.GtEssrcls.Where(w => w.ParentId == serviceClassId && w.ParentId != w.ServiceClassId).Count();
                         if (cLinkExist > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0087", Message = string.Format(_localizer[name: "W0087"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0101", Message = string.Format(_localizer[name: "W0101"]) };
                         }
                         var sLinkExist = db.GtEssrms.Where(w => w.ServiceClassId == serviceClassId).Count();
                         if (sLinkExist > 0)
                         {
-                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0088", Message = string.Format(_localizer[name: "W0088"]) };
+                            return new DO_ReturnParameter() { Status = false, StatusCode = "W0102", Message = string.Format(_localizer[name: "W0102"]) };
                         }
 
                         var ServiceClass = db.GtEssrcls.Where(w => w.ServiceClassId == serviceClassId).FirstOrDefault();

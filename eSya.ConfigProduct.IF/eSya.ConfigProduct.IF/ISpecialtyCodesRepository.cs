@@ -14,5 +14,6 @@ namespace eSya.ConfigProduct.IF
         Task<DO_ReturnParameter> DeleteSpecialtyCodes(DO_SpecialtyCodes obj);
         Task<List<DO_SpecialtyCodes>> GetSpecialtyCodesList();
         Task<DO_SpecialtyCodes> GetSpecialtyCodes(int specialtyId);
+        Task<List<DO_AgeRangeMatrixSpecialtyLink>> GetAgeRangeMatrixLinkbySpecialtyId(int specialtyId);
     }
 }

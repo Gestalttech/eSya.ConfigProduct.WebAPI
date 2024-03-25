@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="DO_AgeRange.cs" />
+    <Compile Remove="DO_SpecialtyUnit.cs" />
+  </ItemGroup>
+
 </Project>

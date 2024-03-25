@@ -71,6 +71,17 @@ namespace eSya.ConfigProduct.WebAPI.Controllers
             var msg = await _SpecialtyCodesRepository.GetSpecialtyCodes(specialtyId);
             return Ok(msg);
         }
+        /// <summary>
+          /// Get Specific Specialty Codes Data
+          /// UI Reffered - Specialty Codes,
+          /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> GetAgeRangeMatrixLinkbySpecialtyId(int specialtyId)
+        {
+            var age = await _SpecialtyCodesRepository.GetAgeRangeMatrixLinkbySpecialtyId(specialtyId);
+            return Ok(age);
+        }
+        
         #endregion
     }
 }
