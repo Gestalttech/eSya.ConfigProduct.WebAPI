@@ -11,6 +11,8 @@ namespace eSya.ConfigProduct.DO
         public int ServiceTypeId { get; set; }
         public string ServiceTypeDesc { get; set; }
         public int PrintSequence { get; set; }
+        public bool UsageStatus { get; set; }
+
         public bool ActiveStatus { get; set; }
         public string FormID { get; set; }
         public int UserID { get; set; }

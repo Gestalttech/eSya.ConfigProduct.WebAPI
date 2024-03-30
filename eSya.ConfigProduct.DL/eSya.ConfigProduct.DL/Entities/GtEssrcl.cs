@@ -8,7 +8,6 @@ namespace eSya.ConfigProduct.DL.Entities
         public GtEssrcl()
         {
             GtEspascs = new HashSet<GtEspasc>();
-            GtEssrms = new HashSet<GtEssrm>();
         }
 
         public int ServiceClassId { get; set; }
@@ -16,6 +15,7 @@ namespace eSya.ConfigProduct.DL.Entities
         public string ServiceClassDesc { get; set; } = null!;
         public int ParentId { get; set; }
         public int PrintSequence { get; set; }
+        public bool UsageStatus { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; } = null!;
         public int CreatedBy { get; set; }
@@ -27,6 +27,5 @@ namespace eSya.ConfigProduct.DL.Entities
 
         public virtual GtEssrgr ServiceGroup { get; set; } = null!;
         public virtual ICollection<GtEspasc> GtEspascs { get; set; }
-        public virtual ICollection<GtEssrm> GtEssrms { get; set; }
     }
 }

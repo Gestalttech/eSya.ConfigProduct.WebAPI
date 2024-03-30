@@ -31,6 +31,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                      ServiceTypeId = x.ServiceTypeId,
                                      ServiceTypeDesc = x.ServiceTypeDesc,
                                      PrintSequence = x.PrintSequence,
+                                     UsageStatus=x.UsageStatus,
                                      ActiveStatus = x.ActiveStatus
                                  }
                         ).OrderBy(o => o.PrintSequence).ToListAsync();
@@ -54,6 +55,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                  {
                                      ServiceTypeId = x.ServiceTypeId,
                                      ServiceTypeDesc = x.ServiceTypeDesc,
+                                     UsageStatus=x.UsageStatus,
                                      ActiveStatus = x.ActiveStatus
                                  }
                         ).FirstOrDefaultAsync();
@@ -90,6 +92,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                     ServiceTypeId = newServiceTypeId,
                                     ServiceTypeDesc = obj.ServiceTypeDesc,
                                     PrintSequence = newServiceTypeId,
+                                    UsageStatus=false,
                                     ActiveStatus = obj.ActiveStatus,
                                     FormId = obj.FormID,
                                     CreatedBy = obj.UserID,
@@ -104,7 +107,12 @@ namespace eSya.ConfigProduct.DL.Repository
                         {
                             if (!obj.ActiveStatus)
                             {
-                                var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == obj.ServiceTypeId && w.ActiveStatus).Count();
+                                //var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == obj.ServiceTypeId && w.ActiveStatus).Count();
+                                //if (LinkExist > 0)
+                                //{
+                                //    return new DO_ReturnParameter() { Status = false, StatusCode = "W0092", Message = string.Format(_localizer[name: "W0092"]) };
+                                //}
+                                var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == obj.ServiceTypeId && w.ActiveStatus && w.UsageStatus == true).Count();
                                 if (LinkExist > 0)
                                 {
                                     return new DO_ReturnParameter() { Status = false, StatusCode = "W0092", Message = string.Format(_localizer[name: "W0092"]) };
@@ -211,7 +219,8 @@ namespace eSya.ConfigProduct.DL.Repository
                 {
                     try
                     {
-                        var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == serviceTypeId).Count();
+                        //var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == serviceTypeId).Count();
+                        var LinkExist = db.GtEssrgrs.Where(w => w.ServiceTypeId == serviceTypeId && w.UsageStatus == true).Count();
                         if (LinkExist > 0)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0096", Message = string.Format(_localizer[name: "W0096"]) };
@@ -252,6 +261,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                      ServiceGroupDesc = x.ServiceGroupDesc,
                                      ServiceCriteria = x.ServiceCriteria,
                                      PrintSequence = x.PrintSequence,
+                                     UsageStatus=x.UsageStatus,
                                      ActiveStatus = x.ActiveStatus
                                  }
                         ).OrderBy(g => g.PrintSequence).ToListAsync();
@@ -328,7 +338,12 @@ namespace eSya.ConfigProduct.DL.Repository
                             }
                             else
                             {
-
+                                var stypeusuagestatus = db.GtEssrties.Where(x => x.ServiceTypeId == obj.ServiceTypeId).FirstOrDefault();
+                                if (stypeusuagestatus != null)
+                                {
+                                    stypeusuagestatus.UsageStatus = true;
+                                }
+                                await db.SaveChangesAsync();
 
                                 var newServiceGroupId = db.GtEssrgrs.Select(a => (int)a.ServiceGroupId).DefaultIfEmpty().Max() + 1;
                                 var newPrintSequence = db.GtEssrgrs.Where(w => w.ServiceTypeId == obj.ServiceTypeId).Select(a => (int)a.PrintSequence).DefaultIfEmpty().Max() + 1;
@@ -340,6 +355,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                     ServiceGroupDesc = obj.ServiceGroupDesc,
                                     ServiceCriteria = obj.ServiceCriteria,
                                     PrintSequence = newPrintSequence,
+                                    UsageStatus=false,
                                     ActiveStatus = obj.ActiveStatus,
                                     FormId = obj.FormId,
                                     CreatedBy = obj.UserID,
@@ -354,7 +370,13 @@ namespace eSya.ConfigProduct.DL.Repository
                         {
                             if (!obj.ActiveStatus)
                             {
-                                var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == obj.ServiceGroupId && w.ActiveStatus).Count();
+                                //var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == obj.ServiceGroupId && w.ActiveStatus).Count();
+                                //if (LinkExist > 0)
+                                //{
+                                //    return new DO_ReturnParameter() { Status = false, StatusCode = "W0098", Message = string.Format(_localizer[name: "W0098"]) };
+                                //}
+
+                                var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == obj.ServiceGroupId && w.ActiveStatus && w.UsageStatus == true).Count();
                                 if (LinkExist > 0)
                                 {
                                     return new DO_ReturnParameter() { Status = false, StatusCode = "W0098", Message = string.Format(_localizer[name: "W0098"]) };
@@ -455,7 +477,8 @@ namespace eSya.ConfigProduct.DL.Repository
                     try
                     {
 
-                        var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == serviceGroupId).Count();
+                        //var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == serviceGroupId).Count();
+                        var LinkExist = db.GtEssrcls.Where(w => w.ServiceGroupId == serviceGroupId && w.UsageStatus == true).Count();
                         if (LinkExist > 0)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0099", Message = string.Format(_localizer[name: "W0099"]) };
@@ -496,9 +519,11 @@ namespace eSya.ConfigProduct.DL.Repository
                                      ServiceClassId = x.ServiceClassId,
                                      ServiceClassDesc = x.ServiceClassDesc,
                                      //IsBaseRateApplicable = x.IsBaseRateApplicable,
+                                     UsageStatus=x.UsageStatus,
                                      ParentId = x.ParentId,
                                      PrintSequence = x.PrintSequence,
-                                     ActiveStatus = x.ActiveStatus
+                                     ActiveStatus = x.ActiveStatus,
+                                     
                                  }
                         ).OrderBy(g => g.PrintSequence).ToListAsync();
                     return await result;
@@ -522,6 +547,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                      ServiceClassId = x.ServiceClassId,
                                      ServiceClassDesc = x.ServiceClassDesc,
                                      PrintSequence = x.PrintSequence,
+                                     UsageStatus=x.UsageStatus,
                                  }
                         ).OrderBy(g => g.PrintSequence).ToListAsync();
                     return await result;
@@ -544,6 +570,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                  {
                                      ServiceClassId = x.ServiceClassId,
                                      ServiceClassDesc = x.ServiceClassDesc,
+                                     UsageStatus=x.UsageStatus,
                                      //IsBaseRateApplicable = x.IsBaseRateApplicable,
                                      ActiveStatus = x.ActiveStatus,
                                      l_ClassParameter = x.GtEspascs.Select(p => new DO_eSyaParameter
@@ -583,6 +610,12 @@ namespace eSya.ConfigProduct.DL.Repository
                             else
                             {
 
+                                var sgroupstatus = db.GtEssrgrs.Where(x => x.ServiceGroupId == obj.ServiceGroupId).FirstOrDefault();
+                                if (sgroupstatus != null)
+                                {
+                                    sgroupstatus.UsageStatus = true;
+                                }
+                                await db.SaveChangesAsync();
 
                                 var newServiceClassId = db.GtEssrcls.Select(a => (int)a.ServiceClassId).DefaultIfEmpty().Max() + 1;
                                 var parentId = obj.ParentId;
@@ -598,6 +631,7 @@ namespace eSya.ConfigProduct.DL.Repository
                                     ServiceClassId = newServiceClassId,
                                     ServiceClassDesc = obj.ServiceClassDesc,
                                     //IsBaseRateApplicable = obj.IsBaseRateApplicable,
+                                    UsageStatus = false,
                                     ParentId = parentId,
                                     PrintSequence = newPrintSequence,
                                     ActiveStatus = obj.ActiveStatus,
@@ -637,7 +671,13 @@ namespace eSya.ConfigProduct.DL.Repository
                                 {
                                     return new DO_ReturnParameter() { Status = false, StatusCode = "W0101", Message = string.Format(_localizer[name: "W0101"]) };
                                 }
-                                var sLinkExist = db.GtEssrms.Where(w => w.ServiceClassId == obj.ServiceClassId && w.ActiveStatus).Count();
+                                //var sLinkExist = db.GtEssrms.Where(w => w.ServiceClassId == obj.ServiceClassId && w.ActiveStatus).Count();
+                                //if (sLinkExist > 0)
+                                //{
+                                //    return new DO_ReturnParameter() { Status = false, StatusCode = "W0102", Message = string.Format(_localizer[name: "W0102"]) };
+                                //}
+                                //var sLinkExist = db.GtEssrcls.Where(w => w.ServiceClassId == serviceClassId && w.UsageStatus == true).Count();
+                                 var sLinkExist = db.GtEssrcls.Where(w => w.ServiceClassId == obj.ServiceClassId && w.ActiveStatus && w.UsageStatus == true).Count();
                                 if (sLinkExist > 0)
                                 {
                                     return new DO_ReturnParameter() { Status = false, StatusCode = "W0102", Message = string.Format(_localizer[name: "W0102"]) };
@@ -654,6 +694,7 @@ namespace eSya.ConfigProduct.DL.Repository
                             }
                             updatedServiceClass.ServiceClassDesc = obj.ServiceClassDesc;
                             //updatedServiceClass.IsBaseRateApplicable = obj.IsBaseRateApplicable;
+                            updatedServiceClass.UsageStatus = false;
                             updatedServiceClass.ActiveStatus = obj.ActiveStatus;
                             updatedServiceClass.ModifiedBy = obj.UserID;
                             updatedServiceClass.ModifiedOn = obj.CreatedOn;
@@ -815,7 +856,8 @@ namespace eSya.ConfigProduct.DL.Repository
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0101", Message = string.Format(_localizer[name: "W0101"]) };
                         }
-                        var sLinkExist = db.GtEssrms.Where(w => w.ServiceClassId == serviceClassId).Count();
+                        //var sLinkExist = db.GtEssrms.Where(w => w.ServiceClassId == serviceClassId).Count();
+                        var sLinkExist = db.GtEssrcls.Where(w => w.ServiceClassId == serviceClassId && w.UsageStatus==true).Count();
                         if (sLinkExist > 0)
                         {
                             return new DO_ReturnParameter() { Status = false, StatusCode = "W0102", Message = string.Format(_localizer[name: "W0102"]) };

@@ -13,6 +13,7 @@ namespace eSya.ConfigProduct.DO
         public string ServiceGroupDesc { get; set; }
         public string ServiceCriteria { get; set; }
         public int PrintSequence { get; set; }
+        public bool UsageStatus{ get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; }
         public int UserID { get; set; }

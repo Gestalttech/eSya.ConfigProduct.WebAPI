@@ -8,6 +8,7 @@ namespace eSya.ConfigProduct.DL.Entities
     public partial class eSyaEnterprise : DbContext
     {
         public static string _connString = "";
+
         public eSyaEnterprise()
         {
         }
@@ -28,7 +29,6 @@ namespace eSya.ConfigProduct.DL.Entities
         public virtual DbSet<GtEssppa> GtEssppas { get; set; } = null!;
         public virtual DbSet<GtEssrcl> GtEssrcls { get; set; } = null!;
         public virtual DbSet<GtEssrgr> GtEssrgrs { get; set; } = null!;
-        public virtual DbSet<GtEssrm> GtEssrms { get; set; } = null!;
         public virtual DbSet<GtEssrty> GtEssrties { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -415,53 +415,6 @@ namespace eSya.ConfigProduct.DL.Entities
                     .HasForeignKey(d => d.ServiceTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_GT_ESSRGR_GT_ESSRTY");
-            });
-
-            modelBuilder.Entity<GtEssrm>(entity =>
-            {
-                entity.HasKey(e => e.ServiceId);
-
-                entity.ToTable("GT_ESSRMS");
-
-                entity.Property(e => e.ServiceId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("ServiceID");
-
-                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
-
-                entity.Property(e => e.CreatedTerminal).HasMaxLength(50);
-
-                entity.Property(e => e.FormId)
-                    .HasMaxLength(10)
-                    .IsUnicode(false)
-                    .HasColumnName("FormID");
-
-                entity.Property(e => e.Gender)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .IsFixedLength();
-
-                entity.Property(e => e.InternalServiceCode).HasMaxLength(15);
-
-                entity.Property(e => e.ModifiedOn).HasColumnType("datetime");
-
-                entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
-
-                entity.Property(e => e.ServiceClassId).HasColumnName("ServiceClassID");
-
-                entity.Property(e => e.ServiceCost).HasColumnType("numeric(18, 6)");
-
-                entity.Property(e => e.ServiceDesc).HasMaxLength(75);
-
-                entity.Property(e => e.ServiceShortDesc)
-                    .HasMaxLength(6)
-                    .IsUnicode(false);
-
-                entity.HasOne(d => d.ServiceClass)
-                    .WithMany(p => p.GtEssrms)
-                    .HasForeignKey(d => d.ServiceClassId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_GT_ESSRMS_GT_ESSRCL");
             });
 
             modelBuilder.Entity<GtEssrty>(entity =>

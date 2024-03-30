@@ -14,6 +14,7 @@ namespace eSya.ConfigProduct.DO
         //public bool IsBaseRateApplicable { get; set; }
         public int ParentId { get; set; }
         public int PrintSequence { get; set; }
+        public bool UsageStatus { get; set; }
         public bool ActiveStatus { get; set; }
         public string FormId { get; set; }
         public int UserID { get; set; }
