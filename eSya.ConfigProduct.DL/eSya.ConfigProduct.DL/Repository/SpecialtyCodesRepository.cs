@@ -288,18 +288,29 @@ namespace eSya.ConfigProduct.DL.Repository
             {
                 using (var db = new eSyaEnterprise())
                 {
-                    var ds = await db.GtEbeagrs.Where(x => x.ActiveStatus)
-                        .Select(r => new DO_AgeRangeMatrixSpecialtyLink
-                        {
-                            AgeRangeId = r.AgeRangeId,
-                            RangeDesc = r.RangeDesc,
-                            AgeRangeFrom=r.AgeRangeFrom,
-                            RangeFromPeriod=r.RangeFromPeriod,
-                            AgeRangeTo=r.AgeRangeTo,
-                            RangeToPeriod=r.RangeToPeriod,
-                            ActiveStatus = false,
-                            
-                        }).ToListAsync();
+                  
+                   var ds =await db.GtEbeagrs.Where(x=>x.ActiveStatus).Join
+                   (db.GtEcapcds,
+                   a => new { a.RangeFromPeriod },
+                   fr => new { RangeFromPeriod = fr.ApplicationCode },
+                   (a, fr) => new { a, fr }).Join
+                   (db.GtEcapcds,
+                   ag => new { ag.a.RangeToPeriod },
+                   ft => new { RangeToPeriod = ft.ApplicationCode },
+                   (ag, ft) => new { ag, ft })
+              .Select(s => new DO_AgeRangeMatrixSpecialtyLink
+              {
+                  AgeRangeId = s.ag.a.AgeRangeId,
+                  RangeDesc = s.ag.a.RangeDesc,
+                  AgeRangeFrom = s.ag.a.AgeRangeFrom,
+                  RangeFromPeriod = s.ag.a.RangeFromPeriod,
+                  AgeRangeTo = s.ag.a.AgeRangeTo,
+                  RangeToPeriod = s.ag.a.RangeToPeriod,
+                  RangeFromPeriodDesc = s.ag.fr.CodeDesc,
+                  RangeToPeriodDesc = s.ft.CodeDesc,
+                  ActiveStatus = false,
+              }).ToListAsync();
+
 
                     foreach (var obj in ds)
                     {
