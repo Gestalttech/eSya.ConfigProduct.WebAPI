@@ -40,5 +40,40 @@ namespace eSya.ConfigProduct.WebAPI.Controllers
             return Ok(msg);
         }
         #endregion
+
+        #region Map Business Linked Specialaties to Clinic & Consultation Type
+
+        /// <summary>
+        /// Insert / Update into Speciality  Clinic & Consultation Type Table
+        /// UI Reffered - Map Business Linked Specialaties to Clinic & Consultation Type
+        /// </summary>
+        [HttpPost]
+        public async Task<IActionResult> InsertUpdateSpecialtyClinicConsultationTypeLink(List<DO_MapSpecialtyClinicConsultationType> obj)
+        {
+            var msg = await _ClinicRepository.InsertUpdateSpecialtyClinicConsultationTypeLink(obj);
+            return Ok(msg);
+        }
+
+        /// <summary>
+        /// Get All Mapped Specialty with Business Key for drop down
+        /// UI Reffered - CMap Business Linked Specialaties to Clinic & Consultation Type
+        /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> GetMappedSpecialtyListbyBusinessKey(int businessKey)
+        {
+            var msg = await _ClinicRepository.GetMappedSpecialtyListbyBusinessKey(businessKey);
+            return Ok(msg);
+        }
+        /// <summary>
+        /// Get All Clinic Consultant mapped with specialty and Business Key
+        /// UI Reffered - Map Business Linked Specialaties to Clinic & Consultation Type
+        /// </summary>
+        [HttpGet]
+        public async Task<IActionResult> GetMapedSpecialtyClinicConsultationTypeBySpecialtyID(int businessKey, int specialtyId)
+        {
+            var msg = await _ClinicRepository.GetMapedSpecialtyClinicConsultationTypeBySpecialtyID(businessKey, specialtyId);
+            return Ok(msg);
+        }
+        #endregion
     }
 }
