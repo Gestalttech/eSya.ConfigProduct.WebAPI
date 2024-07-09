@@ -417,12 +417,6 @@ namespace eSya.ConfigProduct.DL.Entities
 
                 entity.Property(e => e.ModifiedTerminal).HasMaxLength(50);
 
-                entity.Property(e => e.ServiceCriteria)
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .HasDefaultValueSql("((0))")
-                    .IsFixedLength();
-
                 entity.Property(e => e.ServiceGroupDesc).HasMaxLength(50);
 
                 entity.Property(e => e.ServiceTypeId).HasColumnName("ServiceTypeID");
